@@ -1,0 +1,15 @@
+.logo-wrapper {
+  display: inline-flex;
+  align-items: self-end;
+  img {
+    width: 3.5rem;
+    min-height: 1.5rem;
+    margin-right: 1rem;
+  }
+  a {
+    font-weight: 300;
+    font-size: 1.75rem;
+    margin-top: 0.4rem;
+    text-decoration: none;
+  }
+}

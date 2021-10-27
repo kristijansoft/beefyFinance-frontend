@@ -1,0 +1,103 @@
+.unselectable {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.plains {
+  position: fixed;
+  display: none;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+  @media only screen and (min-width: 769px) {
+    display: block;
+  }
+  .plain-left {
+    position: absolute;
+    bottom: -30rem;
+    left: -22.5rem;
+    width: 37.5rem;
+    height: 35.5rem;
+    border-radius: 50%;
+    background-color: #76bf94;
+  }
+  .plain-center-bg {
+    position: absolute;
+    bottom: -17.25rem;
+    left: -18.75vw;
+    width: 100vw;
+    height: 20.5rem;
+    border-radius: 50%;
+    background-color: #549970;
+  }
+  .plain-right {
+    position: absolute;
+    bottom: -34.5rem;
+    right: -30rem;
+    width: 45rem;
+    height: 42rem;
+    border-radius: 50%;
+    background-color: #549970;
+  }
+  .plain-center-fg {
+    position: absolute;
+    bottom: -17.25rem;
+    right: -11.5vw;
+    width: 75vw;
+    height: 20.5rem;
+    border-radius: 50%;
+    background-color: #76bf94;
+  }
+  .cows {
+    .cow {
+      position: absolute;
+      width: 5rem;
+      &:nth-child(1) {
+        left: 3.7383101949212296vw;
+        bottom: 2rem;
+        width: 5.5rem;
+        transform: scaleX(-1);
+        z-index: 2;
+      }
+      &:nth-child(2) {
+        left: 20.571017863867255vw;
+        bottom: 1.1rem;
+        width: 2.5rem;
+        transform: scaleX(-1);
+        z-index: 2;
+      }
+      &:nth-child(3) {
+        left: 36.61368596094807vw;
+        bottom: 2.8rem;
+        width: 2.5rem;
+        transform: scaleX(1);
+        z-index: 3;
+      }
+      &:nth-child(4) {
+        left: 50.25209542539771vw;
+        bottom: 2rem;
+        width: 3.5rem;
+        transform: scaleX(-1);
+        z-index: 2;
+      }
+      &:nth-child(5) {
+        left: 68.13868790248223vw;
+        bottom: 2.3rem;
+        width: 2.5rem;
+        transform: scaleX(1);
+        z-index: 3;
+      }
+      &:last-child {
+        left: 84.62507704535643vw;
+        bottom: 1rem;
+        width: 2.5rem;
+        transform: scaleX(1);
+        z-index: 1;
+      }
+    }
+  }
+}
