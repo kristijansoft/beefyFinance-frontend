@@ -1,0 +1,63 @@
+.beefy-brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 0.1rem;
+  .brand-logo {
+    width: 4rem;
+    min-height: 3rem;
+    margin: 1rem auto;
+    transition: all 0.1s ease-out;
+  }
+  img {
+    width: auto;
+    height: 2.2rem;
+    min-height: 2rem;
+    margin: 0.1rem auto;
+    margin-bottom: 1rem;
+  }
+  span {
+    font-size: 2.1rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: -0.1rem;
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+}
+.beefy-companies ul {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding-top: 1.5rem;
+  li {
+    list-style: none;
+    padding: 0 1rem;
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      &:hover {
+        transform: scale(1.3);
+      }
+      &:hover span {
+        display: flex;
+      }
+      img {
+        width: auto;
+        height: 2rem;
+        line-height: 2rem;
+      }
+      span {
+        display: none;
+        position: absolute;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        top: 100%;
+        left: 58%;
+      }
+    }
+  }
+}
