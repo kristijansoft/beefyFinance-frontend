@@ -8,7 +8,7 @@ const Logo = ({ notext }) => {
     <div className="logo-wrapper">
       <Link to="/">
         <img src={LogoImg} alt="Beefy Finance" />
-        {!notext && <a href="#">Beefy.Finance </a>}
+        {!notext && <span>Beefy.Finance </span>}
       </Link>
     </div>
   );
