@@ -7,6 +7,7 @@ header {
   margin-left: auto;
   margin-right: auto;
   padding: 2rem 0 0;
+  height: 80px;
 }
 .logo {
   display: flex;
@@ -31,6 +32,7 @@ header {
       display: flex;
       align-items: center;
       .nav__menu-item {
+        margin: 0;
         img {
           width: 1.2rem;
           margin: auto;
