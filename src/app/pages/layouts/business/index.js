@@ -2,7 +2,7 @@ import React from "react";
 import Background from "../../../components/Background/Background";
 import Header from "./Header/Header";
 
-const ClientLayout = ({ children }) => {
+const BusinessLayout = ({ children }) => {
   return (
     <React.Fragment>
       <React.Fragment>
@@ -14,4 +14,4 @@ const ClientLayout = ({ children }) => {
   );
 };
 
-export default ClientLayout;
+export default BusinessLayout;
