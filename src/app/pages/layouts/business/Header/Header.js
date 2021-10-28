@@ -17,7 +17,7 @@ const Header = () => {
               rel="noopener noreferrer"
             >
               <i class="fas fa-vote-yea jss35" aria-hidden="true"></i>
-              <span>vote</span>
+              <span>Vote</span>
             </a>
           </li>
           <li>
@@ -27,7 +27,7 @@ const Header = () => {
               rel="noopener noreferrer"
             >
               <i class="fas fa-chart-bar jss35" aria-hidden="true"></i>
-              <span>stats</span>
+              <span>Stats</span>
             </a>
           </li>
           <li>
@@ -37,7 +37,7 @@ const Header = () => {
               rel="noopener noreferrer"
             >
               <i class="fas fa-book jss35" aria-hidden="true"></i>
-              <span>docs</span>
+              <span>Docs</span>
             </a>
           </li>
           <li>
@@ -47,7 +47,7 @@ const Header = () => {
               rel="noopener noreferrer"
             >
               <i class="fas fa-dollar-sign jss35" aria-hidden="true"></i>
-              <span>buy</span>
+              <span>Buy</span>
             </a>
           </li>
           <li>
@@ -61,9 +61,8 @@ const Header = () => {
         </ul>
       </div>
       <div className="head-right">
-        <button className="btn btn-rounded">Light/Dark</button>
-        <button>En</button>
-        <button>Wallet</button>
+        <button className="bee-btn transparent">En</button>
+        <button className="bee-btn transparent">Wallet</button>
       </div>
     </header>
   );

@@ -25,8 +25,9 @@ const ConnectPage = () => {
   return (
     <div className="page">
       <div className="page-container">
-        <h3>Connect</h3>
-        <button onClick={handleOpenModal}>Trigger Modal</button>
+        <button onClick={handleOpenModal} className="bee-btn transparent">
+          Trigger Modal
+        </button>
 
         <Modal
           isOpen={showModal}
