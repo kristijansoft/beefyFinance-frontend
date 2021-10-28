@@ -7,6 +7,8 @@ import IconAVAX from "../../../assets/images/Avalanche.png";
 import IconHECO from "../../../assets/images/HECO.png";
 import IconPOLYGON from "../../../assets/images/Polygon.png";
 import IconFANTOM from "../../../assets/images/Fantom.png";
+import routes from "../../router/routes";
+import { useHistory } from "react-router-dom";
 
 const MultichainCompanies = () => {
   return (
@@ -48,10 +50,15 @@ const MultichainCompanies = () => {
 };
 
 const Home = () => {
+  const history = useHistory();
+
+  function handleClick() {
+    history.push("/connect");
+  }
   return (
     <div className="page">
       <div className="page-container">
-        <div className="box-content">
+        <div className="box-content" onClick={handleClick}>
           <div className="beefy-brand">
             <Logo notext={true} />
             <img src={NameImg} alt="Name" />
