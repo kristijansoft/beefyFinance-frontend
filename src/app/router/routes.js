@@ -7,7 +7,7 @@ const routes = [
     path: "/",
     key: "home",
     exact: true,
-    component: loadable(() => import("../pages/home"), {
+    component: loadable(() => import("../pages/home/Home"), {
       fallback: <Loader />,
     }),
   },

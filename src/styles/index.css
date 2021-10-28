@@ -1,8 +1,15 @@
+* {
+  font-family: "proxima-nova", sans-serif;
+  color: #000;
+  text-rendering: optimizeLegibility;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
+
 body {
   background-color: #f9f3eb;
   margin: 0;
@@ -15,16 +22,11 @@ body {
   overflow-x: hidden;
 }
 
-* {
-  font-family: "proxima-nova", sans-serif;
-  color: #000;
-  text-rendering: optimizeLegibility;
-}
-
 img {
   height: auto;
   max-width: 100%;
 }
+
 .nav-btn {
   width: 150px;
   margin: 0 auto;
@@ -39,8 +41,22 @@ img {
 }
 
 .page {
+  width: 100vw;
+  height: calc(100vh - 80px);
 }
+
 .page .page-container {
+  height: 100%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
   padding: 30px;
   position: relative;
+}
+
+/* Responsive */
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 12px;
+  }
 }
