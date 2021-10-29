@@ -8,6 +8,7 @@ import WalletBinanceImg from "./../../../assets/images/wallets/binance.png";
 import WalletMathImg from "./../../../assets/images/wallets/math.svg";
 import WalletTrustImg from "./../../../assets/images/wallets/trust.svg";
 import WalletSafepalImg from "./../../../assets/images/wallets/safepal.svg";
+import { Link } from "react-router-dom";
 
 Modal.setAppElement("#root");
 
@@ -65,36 +66,48 @@ const ConnectPage = () => {
         >
           <div className="modal-content">
             <div className="wallets-wrapper">
-              <div className="wallet-box">
-                <img src={WalletInjectedImg} alt="Wallet Injected" />
-                <p>Injected</p>
-                <span>Home-BrowserWallet</span>
-              </div>
-              <div className="wallet-box">
-                <img src={WalletConnectImg} alt="Wallet Connect" />
-                <p>WalletConnect</p>
-                <span>Scan with WalletConnect to connect</span>
-              </div>
-              <div className="wallet-box">
-                <img src={WalletBinanceImg} alt="Wallet Binance" />
-                <p>Binance</p>
-                <span>Binance Chain Wallet</span>
-              </div>
-              <div className="wallet-box">
-                <img src={WalletMathImg} alt="Wallet Math" />
-                <p>Math</p>
-                <span>Math Wallet</span>
-              </div>
-              <div className="wallet-box">
-                <img src={WalletTrustImg} alt="Wallet Trust" />
-                <p>Trust</p>
-                <span>Trust Wallet</span>
-              </div>
-              <div className="wallet-box">
-                <img src={WalletSafepalImg} alt="Wallet Safepal" />
-                <p>SafePal</p>
-                <span>SafePal App</span>
-              </div>
+              <Link to="/connect/WalletConnect">
+                <div className="wallet-box">
+                  <img src={WalletInjectedImg} alt="Wallet Injected" />
+                  <p>Injected</p>
+                  <span>Home-BrowserWallet</span>
+                </div>
+              </Link>
+              <Link to="/connect/WalletConnect">
+                <div className="wallet-box">
+                  <img src={WalletConnectImg} alt="Wallet Connect" />
+                  <p>WalletConnect</p>
+                  <span>Scan with WalletConnect to connect</span>
+                </div>
+              </Link>
+              <Link to="/connect/BinanceWallet">
+                <div className="wallet-box">
+                  <img src={WalletBinanceImg} alt="Wallet Binance" />
+                  <p>Binance</p>
+                  <span>Binance Chain Wallet</span>
+                </div>
+              </Link>
+              <Link to="/connect/MathWallet">
+                <div className="wallet-box">
+                  <img src={WalletMathImg} alt="Wallet Math" />
+                  <p>Math</p>
+                  <span>Math Wallet</span>
+                </div>
+              </Link>
+              <Link to="/connect/TrustConnect">
+                <div className="wallet-box">
+                  <img src={WalletTrustImg} alt="Wallet Trust" />
+                  <p>Trust</p>
+                  <span>Trust Wallet</span>
+                </div>
+              </Link>
+              <Link to="/connect/SafepalConnect">
+                <div className="wallet-box">
+                  <img src={WalletSafepalImg} alt="Wallet Safepal" />
+                  <p>SafePal</p>
+                  <span>SafePal App</span>
+                </div>
+              </Link>
             </div>
           </div>
         </Modal>

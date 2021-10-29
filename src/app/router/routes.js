@@ -21,6 +21,51 @@ const routes = [
       fallback: <Loader />,
     }),
   },
+  {
+    path: "/connect/WalletConnect",
+    key: "WalletConnect",
+    exact: true,
+    layout: "business",
+    component: loadable(() => import("../pages/walletconnect/WalletConnect"), {
+      fallback: <Loader />,
+    }),
+  },
+  {
+    path: "/connect/BinanceWallet",
+    key: "BinanceWallet",
+    exact: true,
+    layout: "business",
+    component: loadable(() => import("../pages/walletbinance/WalletBinance"), {
+      fallback: <Loader />,
+    }),
+  },
+  {
+    path: "/connect/MathWallet",
+    key: "MathWallet",
+    exact: true,
+    layout: "business",
+    component: loadable(() => import("../pages/walletmath/WalletMath"), {
+      fallback: <Loader />,
+    }),
+  },
+  {
+    path: "/connect/SafepalConnect",
+    key: "SafepalConnect",
+    exact: true,
+    layout: "business",
+    component: loadable(() => import("../pages/walletsafepal/WalletSafepal"), {
+      fallback: <Loader />,
+    }),
+  },
+  {
+    path: "/connect/TrustConnect",
+    key: "TrustConnect",
+    exact: true,
+    layout: "business",
+    component: loadable(() => import("../pages/wallettrust/WalletTrust"), {
+      fallback: <Loader />,
+    }),
+  },
 ];
 
 export default routes;

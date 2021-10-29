@@ -1,0 +1,69 @@
+.modal-content.wallet-seed-modal {
+  .modal-content__title {
+    position: relative;
+    max-width: 100%;
+    margin: 0 0 30px;
+    padding: 0;
+    color: #595959;
+    font-size: 1.875em;
+    font-weight: 600;
+    text-align: center;
+    text-transform: none;
+    word-wrap: break-word;
+  }
+  .modal-content__subtitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      height: 39px;
+      padding: 0px !important;
+    }
+    p {
+      text-align: center;
+      color: #506175;
+      font-weight: 100;
+      line-height: 40px;
+      margin-left: 15px;
+      font-size: 28px;
+    }
+  }
+
+  form {
+    .modal-form-title {
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      text-align: center;
+      color: #506175;
+      font-weight: 100;
+      line-height: 21px;
+      font-size: 14px;
+    }
+    textarea {
+      border: 1px solid rgb(224, 224, 224);
+      width: calc(100%);
+      height: 100px;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    .modal-form-btn {
+      border-radius: 4px;
+      width: 100%;
+      height: 50px;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+      display: flex;
+      -webkit-box-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+      background: #536dfe;
+      border: 1px solid #3d5afe;
+      color: #fafafa;
+    }
+  }
+}
