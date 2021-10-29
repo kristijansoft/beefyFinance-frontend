@@ -37,6 +37,8 @@ const ConnectPage = () => {
           style={{
             overlay: {
               backgroundColor: "rgba(0, 0, 0, 0.4)",
+              width: "100%",
+              inset: "none",
             },
             content: {
               position: "absolute",
