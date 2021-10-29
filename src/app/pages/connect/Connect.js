@@ -9,11 +9,100 @@ import WalletMathImg from "./../../../assets/images/wallets/math.svg";
 import WalletTrustImg from "./../../../assets/images/wallets/trust.svg";
 import WalletSafepalImg from "./../../../assets/images/wallets/safepal.svg";
 import { Link } from "react-router-dom";
+import Dropdown from "../../components/Dropdown/Dropdown";
 
 Modal.setAppElement("#root");
 
+const VaultItem = ({ data }) => {
+  return (
+    <div className="vault-widget">
+      <div className="widget-container">
+        <div className="main-info">
+          <div>
+            <img src={WalletBinanceImg} alt="Vault Icon" />
+          </div>
+          <div>
+            <p>{data.title}</p>
+            <p>{data.uses}</p>
+            <p>
+              <Link to="/">Buy Token</Link>
+            </p>
+          </div>
+        </div>
+        <div className="wallet-stats">
+          <ul>
+            <li>
+              <p>N/a</p>Wallet
+            </li>
+            <li>
+              <p>N/a</p>Deposited
+            </li>
+            <li>
+              <p>{data.apy}%</p>APY
+            </li>
+            <li>
+              <p>{data.daily}%</p>Daily
+            </li>
+            <li>
+              <p>${data.tvl}</p>TVL
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const listOfPlatform = [
+  {
+    id: "all",
+    label: "All",
+  },
+  {
+    id: "eth",
+    label: "Etherium",
+  },
+];
 const ConnectPage = () => {
   const [showModal, setShowModal] = useState(true);
+  const vaults = [
+    {
+      title: "beltBTC",
+      uses: "Belt",
+      wallet: 240,
+      deposited: 350,
+      apy: 3.84,
+      daily: 0.0103,
+      tvl: 22.63,
+    },
+    {
+      title: "beltBTC",
+      uses: "Belt",
+      wallet: 240,
+      deposited: 350,
+      apy: 3.84,
+      daily: 0.0103,
+      tvl: 22.63,
+    },
+    {
+      title: "beltBTC",
+      uses: "Belt",
+      wallet: 240,
+      deposited: 350,
+      apy: 3.84,
+      daily: 0.0103,
+      tvl: 22.63,
+    },
+    {
+      title: "beltBTC",
+      uses: "Belt",
+      wallet: 240,
+      deposited: 350,
+      apy: 3.84,
+      daily: 0.0103,
+      tvl: 22.63,
+    },
+  ];
 
   function handleOpenModal() {
     setShowModal(true);
@@ -26,6 +115,33 @@ const ConnectPage = () => {
   return (
     <div className="page">
       <div className="page-container">
+        <div className="content-wrapper-flex">
+          <div className="sidebar">
+            <div className="filter-box">
+              <div>
+                <strong>Platform</strong>
+                <Dropdown list={listOfPlatform} />
+              </div>
+              <div>
+                <strong>Vault Type</strong>
+                <Dropdown list={listOfPlatform} />
+              </div>
+              <div>
+                <strong>Asset</strong>
+                <Dropdown list={listOfPlatform} />
+              </div>
+              <div>
+                <strong>Sort By</strong>
+                <Dropdown list={listOfPlatform} />
+              </div>
+            </div>
+          </div>
+          <div className="main-content">
+            {vaults.map((vault) => (
+              <VaultItem data={vault}></VaultItem>
+            ))}
+          </div>
+        </div>
         <button onClick={handleOpenModal} className="bee-btn transparent">
           Trigger Modal
         </button>

@@ -75,3 +75,59 @@
     overflow: scroll !important;
   }
 }
+
+.content-wrapper-flex {
+  display: flex;
+  justify-content: space-between;
+  .sidebar {
+    flex: 0 0 25%;
+    width: 100%;
+    max-width: 250px;
+    .filter-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      & div {
+        margin: 0.7rem 0;
+      }
+    }
+  }
+  .main-content {
+    flex: 0 0 75%;
+  }
+}
+
+.vault-widget {
+  border: 1px solid rgba(195, 195, 195, 1);
+  margin: 0.5rem 0;
+  .widget-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .main-info {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      & div {
+        padding: 0 10px;
+      }
+      img {
+        width: 50px;
+        height: auto;
+      }
+    }
+    .wallet-stats {
+      ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style: none;
+        li {
+          font-size: 16px;
+          color: #000;
+          padding: 0.5rem 0.7rem;
+        }
+      }
+    }
+  }
+}
