@@ -21,6 +21,13 @@
     max-height: 100%;
     overflow: auto;
     border: none;
+    @media screen and (max-width: 768px) {
+      max-width: 800px;
+      width: calc(100vw - 20px);
+      margin-left: auto;
+      margin-right: auto;
+      grid-template-columns: 1fr;
+    }
     .wallet-box {
       width: 100%;
       padding: 24px 16px;
@@ -54,5 +61,16 @@
         color: rgb(169, 169, 188);
       }
     }
+  }
+}
+
+/* React Modal */
+.ReactModal__Content--after-open {
+  @media screen and (max-width: 768px) {
+    width: 80% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    height: 90% !important;
+    overflow: scroll !important;
   }
 }
