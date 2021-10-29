@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Logo from "../../../../components/Logo/Logo";
 import "./Header.scss";
 
@@ -16,7 +17,6 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i class="fas fa-vote-yea jss35" aria-hidden="true"></i>
               <span>Vote</span>
             </a>
           </li>
@@ -26,7 +26,6 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i class="fas fa-chart-bar jss35" aria-hidden="true"></i>
               <span>Stats</span>
             </a>
           </li>
@@ -36,7 +35,6 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i class="fas fa-book jss35" aria-hidden="true"></i>
               <span>Docs</span>
             </a>
           </li>
@@ -46,17 +44,16 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i class="fas fa-dollar-sign jss35" aria-hidden="true"></i>
               <span>Buy</span>
             </a>
           </li>
           <li>
-            <a class="jss37" href="/#/stake">
+            <Link to="/">
               <img
                 alt="Boost"
                 src="https://app.beefy.finance/static/media/boost.d4330994.svg"
               />
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
