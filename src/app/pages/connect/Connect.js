@@ -218,7 +218,7 @@ const ConnectPage = () => {
           isOpen={showModal}
           contentLabel="onRequestClose Example"
           onRequestClose={handleCloseModal}
-          shouldCloseOnOverlayClick={true}
+          shouldCloseOnOverlayClick={false}
           style={{
             overlay: {
               backgroundColor: "rgba(0, 0, 0, 0.4)",

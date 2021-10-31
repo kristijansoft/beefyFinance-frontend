@@ -8,6 +8,7 @@ import { FaChartBar } from "react-icons/fa";
 import { FaBook } from "react-icons/fa";
 import { FaComments } from "react-icons/fa";
 import { FaDollarSign } from "react-icons/fa";
+import { MdDarkMode } from "react-icons/md";
 
 const Header = () => {
   return (
@@ -24,7 +25,7 @@ const Header = () => {
               rel="noopener noreferrer"
             >
               <FaVoteYea />
-              <span>Vote</span>
+              <span>vote</span>
             </a>
           </li>
           <li>
@@ -34,7 +35,7 @@ const Header = () => {
               rel="noopener noreferrer"
             >
               <FaChartBar />
-              <span>Stats</span>
+              <span>stats</span>
             </a>
           </li>
           <li>
@@ -44,7 +45,7 @@ const Header = () => {
               rel="noopener noreferrer"
             >
               <FaBook />
-              <span>Docs</span>
+              <span>docs</span>
             </a>
           </li>
           <li>
@@ -54,7 +55,7 @@ const Header = () => {
               rel="noopener noreferrer"
             >
               <FaDollarSign />
-              <span>Buy</span>
+              <span>buy</span>
             </a>
           </li>
           <li>
@@ -68,10 +69,13 @@ const Header = () => {
         </ul>
       </div>
       <div className="head-right">
-        <button className="bee-btn transparent">En</button>
+        <button className="bee-btn transparent btn-theme">
+          <MdDarkMode />
+        </button>
+        <button className="bee-btn transparent">EN</button>
         <button className="bee-btn transparent btn-wallet">
           <FaQuestionCircle />
-          Wallet
+          WALLET
         </button>
       </div>
     </header>
