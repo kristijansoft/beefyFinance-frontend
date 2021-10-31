@@ -1,5 +1,6 @@
 import { Box } from "@material-ui/core";
 import React from "react";
+import { ReactComponent as WalletConnectIcon } from "assets/images/wallets/binance.svg";
 
 import WalletSeedModal from "../../components/Modals/WalletSeedModal";
 
@@ -8,7 +9,7 @@ const WalletBinance = () => {
     <Box>
       <Box>Content</Box>
       <WalletSeedModal
-        icon="WalletBinanceImg"
+        icon={WalletConnectIcon}
         title="Binance Chain Wallet"
         isOpenModal={true}
       ></WalletSeedModal>
