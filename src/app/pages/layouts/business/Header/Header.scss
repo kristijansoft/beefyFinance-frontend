@@ -1,4 +1,4 @@
-header {
+header.bsn-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,22 +18,27 @@ header {
   }
 }
 
-.nav__menu {
-  li {
-    &:last-child {
-      border: 2px solid #5e936c;
-      padding: 3px;
-      border-radius: 5px;
-    }
-    a {
-      height: 15px;
-      vertical-align: middle;
-      color: #000;
-      margin: 0 0.5rem;
-      display: inline-flex;
-      font-size: 1rem;
-      font-weight: 400;
-      text-decoration: none;
+.nav {
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+  .nav__menu {
+    li {
+      &:last-child {
+        border: 2px solid #5e936c;
+        padding: 3px;
+        border-radius: 5px;
+      }
+      a {
+        height: 15px;
+        vertical-align: middle;
+        color: #000;
+        margin: 0 0.5rem;
+        display: inline-flex;
+        font-size: 1rem;
+        font-weight: 400;
+        text-decoration: none;
+      }
     }
   }
 }

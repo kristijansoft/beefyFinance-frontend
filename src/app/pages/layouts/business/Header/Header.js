@@ -11,7 +11,7 @@ import { FaDollarSign } from "react-icons/fa";
 
 const Header = () => {
   return (
-    <header>
+    <header className="bsn-header">
       <div className="logo">
         <Logo />
       </div>
