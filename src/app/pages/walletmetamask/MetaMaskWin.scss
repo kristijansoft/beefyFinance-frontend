@@ -1,0 +1,168 @@
+/* MetaMask Window */
+
+.metamask-window {
+  overflow-x: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #f7f7f7;
+  .app-header {
+    align-items: center;
+    background: #f2f3f4;
+    position: relative;
+    z-index: 12;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    flex: 0 0 auto;
+    @media screen and (min-width: 576px) {
+      height: 75px;
+      justify-content: center;
+    }
+    @media screen and (max-width: 575px) {
+      padding: 1rem;
+      z-index: 26;
+    }
+    &__contents {
+      display: flex;
+      flex-flow: row nowrap;
+      width: 100%;
+      @media screen and (min-width: 576px) {
+        width: 85vw;
+      }
+    }
+    &__logo-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex: 0 0 auto;
+      img {
+        height: 32px;
+        &:first-child {
+          @media screen and (min-width: 576px) {
+            display: none;
+          }
+        }
+        &:last-child {
+          @media screen and (max-width: 575px) {
+            display: none;
+          }
+        }
+      }
+    }
+    &__account-menu-container {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      flex: 1 1 auto;
+      width: 0;
+      flex-flow: row nowrap;
+      justify-content: flex-end;
+      .network-component-wrapper {
+        max-width: 200px;
+        border: 2px solid #bbc0c5;
+        border-radius: 82px;
+        padding: 6px 3px;
+        flex: 0 0 auto;
+        display: flex;
+        cursor: pointer;
+      }
+      .network-indicator {
+        display: flex;
+        align-items: center;
+        font-size: 0.6em;
+        width: 100%;
+        .menu-icon-circle {
+          background: none;
+          border-radius: 22px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 1px solid transparent;
+          margin: 0 4px;
+          & > div {
+            background: rgb(3, 135, 137);
+            border-radius: 17px;
+            border: none;
+            height: 12px;
+            width: 12px;
+          }
+        }
+      }
+    }
+  }
+  .main-container {
+    display: flex;
+    justify-content: center;
+    flex: 1 0 auto;
+    min-height: 0;
+    width: 100%;
+    .view-wrapper {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      padding: 0 10px;
+      background: white;
+      .import-account {
+        margin: 24px;
+        display: flex;
+        flex-flow: column nowrap;
+        width: calc(100vw - 80px);
+        h3 {
+          color: #1b344d;
+          font-size: 40px;
+          line-height: 51px;
+          margin-bottom: 10px;
+        }
+        & > p {
+          color: #1b344d;
+          font-size: 16px;
+        }
+        .input-wrapper {
+          display: flex;
+          flex-flow: column nowrap;
+          margin-top: 30px;
+          & > label {
+            margin-bottom: 9px;
+            color: #1b344d;
+            font-size: 18px;
+            line-height: 23px;
+          }
+          & > textarea {
+            min-height: 190px;
+            border: 1px solid #cdcdcd;
+            border-radius: 6px;
+            background-color: #fff;
+            padding: 17px;
+            font-size: 16px;
+          }
+        }
+        .btn-proceed {
+          cursor: auto;
+          opacity: 0.5;
+          pointer-events: none;
+          margin: 35px 0 14px;
+          width: 170px;
+          height: 44px;
+          height: 54px;
+          width: 198px;
+          box-shadow: 0 2px 4px 0 rgb(0 0 0 / 14%);
+          color: #fff;
+          font-size: 1.25rem;
+          font-weight: 500;
+          transition: 200ms ease-in-out;
+          background-color: rgba(247, 134, 28, 0.9);
+          border-radius: 0;
+          line-height: 1.25rem;
+          padding: 0.75rem 1rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-sizing: border-box;
+          border-style: none;
+        }
+      }
+    }
+  }
+}

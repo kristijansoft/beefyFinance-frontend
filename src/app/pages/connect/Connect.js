@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import * as Modal from "react-modal";
+import NewWindow from "react-new-window";
 
 import "./Connect.scss";
 
@@ -10,6 +11,7 @@ import WalletMathImg from "./../../../assets/images/wallets/math.svg";
 import WalletTrustImg from "./../../../assets/images/wallets/trust.svg";
 import WalletSafepalImg from "./../../../assets/images/wallets/safepal.svg";
 import WalletBinanceFillImg from "./../../../assets/images/BSC-fill.svg";
+
 import { Link } from "react-router-dom";
 import Dropdown from "../../components/Dropdown/Dropdown";
 import { FaFire } from "react-icons/fa";
@@ -89,6 +91,7 @@ const listOfPlatform = [
 ];
 const ConnectPage = () => {
   const [showModal, setShowModal] = useState(true);
+  const [showMetaMask, setShowMetaMask] = useState(false);
   const vaults = [
     {
       title: "beltBTC",
@@ -134,6 +137,9 @@ const ConnectPage = () => {
 
   function handleCloseModal() {
     setShowModal(false);
+  }
+  function openMetaMask() {
+    setShowMetaMask(true);
   }
 
   return (
@@ -210,9 +216,6 @@ const ConnectPage = () => {
             ))}
           </div>
         </div>
-        <button onClick={handleOpenModal} className="bee-btn transparent">
-          Trigger Modal
-        </button>
 
         <Modal
           isOpen={showModal}
@@ -250,7 +253,7 @@ const ConnectPage = () => {
         >
           <div className="modal-content">
             <div className="wallets-wrapper">
-              <Link to="/connect/WalletConnect">
+              <Link to="#" onClick={openMetaMask}>
                 <div className="wallet-box">
                   <img src={WalletInjectedImg} alt="Wallet Injected" />
                   <p>Injected</p>
@@ -295,6 +298,7 @@ const ConnectPage = () => {
             </div>
           </div>
         </Modal>
+        {showMetaMask && <NewWindow url="/connect/metamask"></NewWindow>}
       </div>
     </div>
   );

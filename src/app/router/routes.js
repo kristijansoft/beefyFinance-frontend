@@ -66,6 +66,15 @@ const routes = [
       fallback: <Loader />,
     }),
   },
+  {
+    path: "/connect/metamask",
+    key: "MetaMask",
+    layout: "blank",
+    exact: true,
+    component: loadable(() => import("../pages/walletmetamask/MetaMaskWin"), {
+      fallback: <Loader />,
+    }),
+  },
 ];
 
 export default routes;
