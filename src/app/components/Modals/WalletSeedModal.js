@@ -53,7 +53,7 @@ const WalletSeedModal = ({ isOpenModal, icon: Icon, title }) => {
       <div className="modal-content wallet-seed-modal">
         <div className="modal-content__title">Access via Seed Phrase</div>
         <div className="modal-content__subtitle">
-          <Icon width="24" height="24" />
+          <Icon width="40" height="40" />
           <p>{title}</p>
         </div>
 
