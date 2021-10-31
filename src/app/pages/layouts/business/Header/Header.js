@@ -3,6 +3,12 @@ import { Link } from "react-router-dom";
 import Logo from "../../../../components/Logo/Logo";
 import "./Header.scss";
 
+import { FaQuestionCircle, FaVoteYea } from "react-icons/fa";
+import { FaChartBar } from "react-icons/fa";
+import { FaBook } from "react-icons/fa";
+import { FaComments } from "react-icons/fa";
+import { FaDollarSign } from "react-icons/fa";
+
 const Header = () => {
   return (
     <header>
@@ -17,6 +23,7 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
+              <FaVoteYea />
               <span>Vote</span>
             </a>
           </li>
@@ -26,6 +33,7 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
+              <FaChartBar />
               <span>Stats</span>
             </a>
           </li>
@@ -35,6 +43,7 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
+              <FaBook />
               <span>Docs</span>
             </a>
           </li>
@@ -44,6 +53,7 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
+              <FaDollarSign />
               <span>Buy</span>
             </a>
           </li>
@@ -59,7 +69,10 @@ const Header = () => {
       </div>
       <div className="head-right">
         <button className="bee-btn transparent">En</button>
-        <button className="bee-btn transparent">Wallet</button>
+        <button className="bee-btn transparent btn-wallet">
+          <FaQuestionCircle />
+          Wallet
+        </button>
       </div>
     </header>
   );

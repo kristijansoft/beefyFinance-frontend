@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import * as Modal from "react-modal";
+
 import "./Connect.scss";
 
 import WalletInjectedImg from "./../../../assets/images/wallets/injected.svg";
@@ -8,8 +9,10 @@ import WalletBinanceImg from "./../../../assets/images/wallets/binance.png";
 import WalletMathImg from "./../../../assets/images/wallets/math.svg";
 import WalletTrustImg from "./../../../assets/images/wallets/trust.svg";
 import WalletSafepalImg from "./../../../assets/images/wallets/safepal.svg";
+import WalletBinanceFillImg from "./../../../assets/images/BSC-fill.svg";
 import { Link } from "react-router-dom";
 import Dropdown from "../../components/Dropdown/Dropdown";
+import { FaFire } from "react-icons/fa";
 
 Modal.setAppElement("#root");
 
@@ -22,29 +25,50 @@ const VaultItem = ({ data }) => {
             <img src={WalletBinanceImg} alt="Vault Icon" />
           </div>
           <div>
-            <p>{data.title}</p>
-            <p>{data.uses}</p>
             <p>
-              <Link to="/">Buy Token</Link>
+              <strong>{data.title}</strong>
+            </p>
+            <p>
+              <span className="text-gray">Uses: {data.uses}</span>
+            </p>
+            <p>
+              <Link to="/">
+                <strong>Buy Token</strong>
+              </Link>
             </p>
           </div>
         </div>
         <div className="wallet-stats">
           <ul>
             <li>
-              <p>N/a</p>Wallet
+              <p>
+                <strong>N/a</strong>
+              </p>
+              <span className="text-gray">Wallet</span>
             </li>
             <li>
-              <p>N/a</p>Deposited
+              <p>
+                <strong>N/a</strong>
+              </p>
+              <span className="text-gray">Deposited</span>
             </li>
             <li>
-              <p>{data.apy}%</p>APY
+              <p>
+                <strong>{data.apy}%</strong>
+              </p>
+              <span className="text-gray">APY</span>
             </li>
             <li>
-              <p>{data.daily}%</p>Daily
+              <p>
+                <strong>{data.daily}%</strong>
+              </p>
+              <span className="text-gray">Daily</span>
             </li>
             <li>
-              <p>${data.tvl}</p>TVL
+              <p>
+                <strong>${data.tvl}</strong>
+              </p>
+              <span className="text-gray">TVL</span>
             </li>
           </ul>
         </div>
@@ -116,22 +140,66 @@ const ConnectPage = () => {
     <div className="page">
       <div className="page-container">
         <div className="content-wrapper-flex">
-          <div className="sidebar">
-            <div className="filter-box">
+          <div className="network-select">
+            <div className="network-select__left">
+              <h2>Select Network</h2>
+              <div className="select-wrapper">
+                <div>
+                  <img src={WalletBinanceFillImg} alt="Network" />
+                </div>
+                <div>
+                  <strong>BSC</strong>
+                </div>
+              </div>
+              <p>
+                <strong>258 Vaults</strong>
+              </p>
+            </div>
+            <div className="network-select__right">
+              <h2>TVL $405.59M</h2>
+              <h3>BIFI Buyback $0.00/day</h3>
+              <h3>Deposited $7777</h3>
+              <p>
+                <span className="text-gray">
+                  All vaults autocompound at an optional rate
+                </span>
+              </p>
+            </div>
+          </div>
+          <div className="filter-section">
+            <div className="filter-section__box filter-section__box__check">
               <div>
-                <strong>Platform</strong>
+                <input type="checkbox" value="0" />
+                <span>Hide Zero Balalnces</span>
+              </div>
+              <div>
+                <input type="checkbox" value="0" />
+                <span>Retired Vaults</span>
+              </div>
+              <div>
+                <input type="checkbox" value="0" />
+                <span>Deposited Vaults</span>
+              </div>
+              <div>
+                <input type="checkbox" value="0" />
+                <span>Boost</span> <FaFire />
+              </div>
+            </div>
+            <div className="filter-section__box filter-section__box__list">
+              <div>
+                <span className="text-gray">Platform</span>
                 <Dropdown list={listOfPlatform} />
               </div>
               <div>
-                <strong>Vault Type</strong>
+                <span className="text-gray">Vault Type</span>
                 <Dropdown list={listOfPlatform} />
               </div>
               <div>
-                <strong>Asset</strong>
+                <span className="text-gray">Asset</span>
                 <Dropdown list={listOfPlatform} />
               </div>
               <div>
-                <strong>Sort By</strong>
+                <span className="text-gray">Sort By</span>
                 <Dropdown list={listOfPlatform} />
               </div>
             </div>

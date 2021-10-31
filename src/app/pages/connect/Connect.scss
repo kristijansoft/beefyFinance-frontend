@@ -79,16 +79,53 @@
 .content-wrapper-flex {
   display: flex;
   justify-content: space-between;
-  .sidebar {
-    flex: 0 0 25%;
+  flex-direction: column;
+  .network-select {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    &__left {
+      .select-wrapper {
+        display: flex;
+        align-items: center;
+        img {
+          width: 50px;
+          height: 50px;
+          margin-right: 10px;
+        }
+      }
+    }
+    &__right {
+      text-align: right;
+    }
+  }
+  .filter-section {
     width: 100%;
-    max-width: 250px;
-    .filter-box {
+    border: 1px solid rgba(195, 195, 195, 1);
+    padding: 10px 15px;
+    &__box {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      & div {
+      & > div {
+        flex: 0 0 25%;
         margin: 0.7rem 0;
+      }
+      &__check {
+        input[type="checkbox"] {
+          margin-right: 10px;
+          font-size: 1rem;
+          line-height: 1.5;
+          padding: 11px 23px;
+          border: 1px solid rgba(0, 0, 0, 0.15);
+          border-radius: 0;
+          outline: 0;
+          background-color: transparent;
+        }
+      }
+      &__list {
+        span.text-gray {
+          color: rgba(195, 195, 195, 1);
+        }
       }
     }
   }
@@ -100,6 +137,21 @@
 .vault-widget {
   border: 1px solid rgba(195, 195, 195, 1);
   margin: 0.5rem 0;
+  position: relative;
+  padding: 1rem 0;
+  background-color: #f9f3eb;
+  &::before {
+    content: "Boosted By WallStreetGames";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: fit-content;
+    height: 23px;
+    padding: 3px 5px;
+    display: block;
+    color: #fff;
+    background-color: #5e936c;
+  }
   .widget-container {
     display: flex;
     justify-content: space-between;
