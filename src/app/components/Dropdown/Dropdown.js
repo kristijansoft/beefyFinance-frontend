@@ -17,7 +17,7 @@ const Dropdown = ({ list }) => {
       <div className="dropdown-header" onClick={toggleDropdown}>
         {selectedItem
           ? items.find((item) => item.id == selectedItem).label
-          : "Select your destination"}
+          : "Select"}
         <i className={`fa fa-chevron-right icon ${isOpen && "open"}`}></i>
       </div>
       <div className={`dropdown-body ${isOpen && "open"}`}>

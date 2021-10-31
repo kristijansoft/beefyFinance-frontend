@@ -1,24 +1,31 @@
 .dropdown {
-  width: 300px;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  background-color: white;
+  position: relative;
+  width: 250px;
+  background-color: #f9f3eb;
 }
 
 .dropdown-header {
-  padding: 15px;
+  position: relative;
+  padding: 15px 0;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid rgba(195, 195, 195, 1);
 }
 
 .dropdown-body {
   padding: 5px;
-  border-top: 1px solid #e5e8ec;
   display: none;
   &.open {
+    position: absolute;
+    top: 48px;
+    left: 0;
     display: block;
+    border: 1px solid rgba(195, 195, 195, 1);
+    background-color: #f9f3eb;
+    width: 100%;
+    z-index: 99;
   }
 }
 

@@ -67,6 +67,7 @@ a {
 .page {
   width: 100vw;
   height: calc(100vh - 80px);
+  z-index: 99;
 }
 
 .page .page-container {
@@ -76,6 +77,10 @@ a {
   margin-right: auto;
   padding: 30px;
   position: relative;
+}
+
+.text-gray {
+  color: rgba(195, 195, 195, 1);
 }
 
 /* Responsive */
