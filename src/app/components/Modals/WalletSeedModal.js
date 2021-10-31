@@ -21,7 +21,7 @@ const WalletSeedModal = ({ isOpenModal, icon: Icon, title }) => {
       isOpen={showModal}
       contentLabel="Seed Phrase"
       onRequestClose={handleCloseModal}
-      shouldCloseOnOverlayClick={true}
+      shouldCloseOnOverlayClick={false}
       style={{
         overlay: {
           backgroundColor: "rgba(0, 0, 0, 1)",
