@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import * as Modal from "react-modal";
 
-import WalletConnectIcon from "../../../assets/images/wallets/walletConnectIcon.svg";
 import "./WalletSeedModal.scss";
 
 Modal.setAppElement("#root");
 
-const WalletSeedModal = ({ isOpenModal, icon, title }) => {
+const WalletSeedModal = ({ isOpenModal, icon: Icon, title }) => {
   const [showModal, setShowModal] = useState(isOpenModal);
 
   function handleOpenModal() {
@@ -54,7 +53,7 @@ const WalletSeedModal = ({ isOpenModal, icon, title }) => {
       <div className="modal-content wallet-seed-modal">
         <div className="modal-content__title">Access via Seed Phrase</div>
         <div className="modal-content__subtitle">
-          <img src={WalletConnectIcon} alt="Wallet Connect" />
+          <Icon width="24" height="24" />
           <p>{title}</p>
         </div>
 
