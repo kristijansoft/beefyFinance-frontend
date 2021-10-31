@@ -8,72 +8,68 @@ const routes = [
     key: "home",
     exact: true,
     layout: "client",
-    component: loadable(() => import("../pages/home/Home"), {
-      fallback: <Loader />,
-    }),
+    component: loadable(() => import("../pages/home/Home"), {}),
   },
   {
     path: "/connect",
     key: "connect",
     exact: true,
     layout: "business",
-    component: loadable(() => import("../pages/connect/Connect"), {
-      fallback: <Loader />,
-    }),
+    component: loadable(() => import("../pages/connect/Connect"), {}),
   },
   {
     path: "/connect/WalletConnect",
     key: "WalletConnect",
     exact: true,
-    layout: "business",
-    component: loadable(() => import("../pages/walletconnect/WalletConnect"), {
-      fallback: <Loader />,
-    }),
+    layout: "blank",
+    component: loadable(
+      () => import("../pages/walletconnect/WalletConnect"),
+      {}
+    ),
   },
   {
     path: "/connect/BinanceWallet",
     key: "BinanceWallet",
     exact: true,
-    layout: "business",
-    component: loadable(() => import("../pages/walletbinance/WalletBinance"), {
-      fallback: <Loader />,
-    }),
+    layout: "blank",
+    component: loadable(
+      () => import("../pages/walletbinance/WalletBinance"),
+      {}
+    ),
   },
   {
     path: "/connect/MathWallet",
     key: "MathWallet",
     exact: true,
-    layout: "business",
-    component: loadable(() => import("../pages/walletmath/WalletMath"), {
-      fallback: <Loader />,
-    }),
+    layout: "blank",
+    component: loadable(() => import("../pages/walletmath/WalletMath"), {}),
   },
   {
     path: "/connect/SafepalConnect",
     key: "SafepalConnect",
     exact: true,
-    layout: "business",
-    component: loadable(() => import("../pages/walletsafepal/WalletSafepal"), {
-      fallback: <Loader />,
-    }),
+    layout: "blank",
+    component: loadable(
+      () => import("../pages/walletsafepal/WalletSafepal"),
+      {}
+    ),
   },
   {
     path: "/connect/TrustConnect",
     key: "TrustConnect",
     exact: true,
-    layout: "business",
-    component: loadable(() => import("../pages/wallettrust/WalletTrust"), {
-      fallback: <Loader />,
-    }),
+    layout: "blank",
+    component: loadable(() => import("../pages/wallettrust/WalletTrust"), {}),
   },
   {
     path: "/connect/metamask",
     key: "MetaMask",
     layout: "blank",
     exact: true,
-    component: loadable(() => import("../pages/walletmetamask/MetaMaskWin"), {
-      fallback: <Loader />,
-    }),
+    component: loadable(
+      () => import("../pages/walletmetamask/MetaMaskWin"),
+      {}
+    ),
   },
 ];
 
