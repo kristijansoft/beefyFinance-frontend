@@ -12,19 +12,27 @@ import WalletTrustImg from "./../../../assets/images/wallets/trust.svg";
 import WalletSafepalImg from "./../../../assets/images/wallets/safepal.svg";
 import WalletBinanceFillImg from "./../../../assets/images/BSC-fill.svg";
 
+import WalletBifiImg from "assets/images/coins/bifi.png";
+import WalletBTCImg from "assets/images/coins/BTC.svg";
+import WalletBananaImg from "assets/images/coins/banana.svg";
 import { Link } from "react-router-dom";
 import Dropdown from "../../components/Dropdown/Dropdown";
 import { FaFire } from "react-icons/fa";
+import FireImg from "assets/images/fire.png";
+import SpanLoader from "app/components/SpanLoader/SpanLoader";
 
 Modal.setAppElement("#root");
 
-const VaultItem = ({ data }) => {
+const VaultItem = ({ data, index = 0 }) => {
   return (
     <div className="vault-widget">
+      {data.caption !== "" && <div className="caption">{data.caption}</div>}
       <div className="widget-container">
         <div className="main-info">
           <div>
-            <img src={WalletBinanceImg} alt="Vault Icon" />
+            {index == 0 && <img src={WalletBifiImg} alt="Vault Icon" />}
+            {index == 1 && <img src={WalletBTCImg} alt="Vault Icon" />}
+            {index == 2 && <img src={WalletBananaImg} alt="Vault Icon" />}
           </div>
           <div>
             <p>
@@ -44,13 +52,13 @@ const VaultItem = ({ data }) => {
           <ul>
             <li>
               <p>
-                <strong>N/a</strong>
+                <SpanLoader />
               </p>
               <span className="text-gray">Wallet</span>
             </li>
             <li>
               <p>
-                <strong>N/a</strong>
+                <SpanLoader />
               </p>
               <span className="text-gray">Deposited</span>
             </li>
@@ -94,8 +102,19 @@ const ConnectPage = () => {
   const [showMetaMask, setShowMetaMask] = useState(false);
   const vaults = [
     {
+      title: "BIFI Maxi",
+      uses: "Beefy.Finance",
+      caption: "",
+      wallet: null,
+      deposited: null,
+      apy: 6.4,
+      daily: 0.017,
+      tvl: 21.15,
+    },
+    {
       title: "beltBTC",
       uses: "Belt",
+      caption: "Boosted by PlayMining",
       wallet: 240,
       deposited: 350,
       apy: 3.84,
@@ -103,26 +122,19 @@ const ConnectPage = () => {
       tvl: 22.63,
     },
     {
-      title: "beltBTC",
-      uses: "Belt",
+      title: "BANANA-BNB LP",
+      uses: "ApeSwap",
+      caption: "Boosted by CEEK",
       wallet: 240,
       deposited: 350,
-      apy: 3.84,
+      apy: 151.7,
       daily: 0.0103,
-      tvl: 22.63,
+      tvl: 3.62,
     },
     {
       title: "beltBTC",
       uses: "Belt",
-      wallet: 240,
-      deposited: 350,
-      apy: 3.84,
-      daily: 0.0103,
-      tvl: 22.63,
-    },
-    {
-      title: "beltBTC",
-      uses: "Belt",
+      caption: "",
       wallet: 240,
       deposited: 350,
       apy: 3.84,
@@ -159,7 +171,8 @@ const ConnectPage = () => {
                 <div>
                   <img src={WalletBinanceFillImg} alt="Network" />
                 </div>
-                <div>
+                <div className="selected-network">
+                  <div></div>
                   <strong>BSC</strong>
                 </div>
               </div>
@@ -170,7 +183,11 @@ const ConnectPage = () => {
             <div className="network-select__right">
               <h2>TVL $405.59M</h2>
               <h3>BIFI Buyback $0.00/day</h3>
-              <h3>Deposited $7777</h3>
+              <h3>
+                <span>
+                  Deposited <SpanLoader />
+                </span>
+              </h3>
               <p>
                 <span className="text-gray">
                   All vaults autocompound at an optional rate
@@ -179,6 +196,11 @@ const ConnectPage = () => {
             </div>
           </div>
           <div className="filter-section">
+            <div className="clear">
+              <button className="bee-btn transparent btn-clear">
+                Clear Filters
+              </button>
+            </div>
             <div className="filter-section__box filter-section__box__check">
               <div>
                 <input type="checkbox" value="0" />
@@ -194,7 +216,8 @@ const ConnectPage = () => {
               </div>
               <div>
                 <input type="checkbox" value="0" />
-                <span>Boost</span> <FaFire />
+                <span>Boost</span>{" "}
+                <img src={FireImg} className="fire-icon" alt="fire" />
               </div>
             </div>
             <div className="filter-section__box filter-section__box__list">
@@ -217,8 +240,8 @@ const ConnectPage = () => {
             </div>
           </div>
           <div className="main-content">
-            {vaults.map((vault) => (
-              <VaultItem data={vault}></VaultItem>
+            {vaults.map((vault, index) => (
+              <VaultItem data={vault} index={index}></VaultItem>
             ))}
           </div>
         </div>
@@ -227,7 +250,7 @@ const ConnectPage = () => {
           isOpen={showModal}
           contentLabel="onRequestClose Example"
           onRequestClose={handleCloseModal}
-          shouldCloseOnOverlayClick={false}
+          shouldCloseOnOverlayClick={true}
           style={{
             overlay: {
               backgroundColor: "rgba(0, 0, 0, 0.4)",
