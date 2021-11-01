@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import MetaMaskImg from "assets/images/metamask.svg";
 import MetaMaskFullImg from "./../../../assets/images/metamask-logo-horizontal.svg";
 import "./MetaMaskWin.scss";
+import { FaChevronDown } from "react-icons/fa";
 
 const MetaMaskWin = () => {
   const [show, setShow] = useState(false);
@@ -34,7 +35,9 @@ const MetaMaskWin = () => {
                       <div></div>
                     </div>
                     <div className="network-name">Ethererum MainNet</div>
-                    <div>icon</div>
+                    <div className="icon-wrapper">
+                      <FaChevronDown size={12} />
+                    </div>
                   </div>
                 </div>
               </div>
