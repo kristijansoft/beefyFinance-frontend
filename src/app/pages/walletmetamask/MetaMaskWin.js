@@ -1,5 +1,5 @@
 import { Box } from "@material-ui/core";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MetaMaskImg from "assets/images/metamask.svg";
 import MetaMaskFullImg from "./../../../assets/images/metamask-logo-horizontal.svg";
 import "./MetaMaskWin.scss";
@@ -70,7 +70,7 @@ const MetaMaskWin = () => {
                 </div>
                 <button
                   className={`btn-proceed ${
-                    walletSeedInput.length > 0 ? "activeB" : ""
+                    walletSeedInput.split(" ").length == 12 ? "activeB" : ""
                   }`}
                 >
                   Proceed
