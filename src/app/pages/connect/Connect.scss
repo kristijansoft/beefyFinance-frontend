@@ -89,9 +89,21 @@
         display: flex;
         align-items: center;
         img {
-          width: 50px;
-          height: 50px;
+          width: 40px;
+          height: 40px;
           margin-right: 10px;
+        }
+        .selected-network {
+          display: flex;
+          align-items: center;
+          margin-left: 5px;
+          div {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #5a8f69;
+            margin-right: 5px;
+          }
         }
       }
     }
@@ -103,6 +115,16 @@
     width: 100%;
     border: 1px solid rgba(195, 195, 195, 1);
     padding: 10px 15px;
+    position: relative;
+    .clear {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      .btn-clear {
+        border: 1px solid #ded9d5;
+        padding: 4px 8px;
+      }
+    }
     &__box {
       display: flex;
       align-items: center;
@@ -113,6 +135,13 @@
       }
       &__check {
         flex-wrap: wrap;
+        & > div {
+          &:last-child {
+            display: flex;
+            align-items: center;
+            color: #699e77 !important;
+          }
+        }
         input[type="checkbox"] {
           margin-right: 10px;
           font-size: 1rem;
@@ -122,6 +151,10 @@
           border-radius: 0;
           outline: 0;
           background-color: transparent;
+        }
+        .fire-icon {
+          width: 40px;
+          height: 40px;
         }
       }
       &__list {
@@ -142,8 +175,8 @@
   position: relative;
   padding: 1rem 0;
   background-color: #f9f3eb;
-  &::before {
-    content: "Boosted By WallStreetGames";
+  color: #000;
+  .caption {
     position: absolute;
     top: 0;
     left: 0;
@@ -151,14 +184,15 @@
     height: 23px;
     padding: 3px 5px;
     display: block;
+    font-weight: 600;
     color: #fff;
-    background-color: #5e936c;
+    background-color: #699e77;
   }
   .widget-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     .main-info {
+      flex: 0 0 25%;
       display: flex;
       justify-content: left;
       align-items: center;
@@ -172,6 +206,7 @@
       }
     }
     .wallet-stats {
+      flex: 0 0 75%;
       ul {
         display: flex;
         justify-content: space-around;
