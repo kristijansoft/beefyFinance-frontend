@@ -302,12 +302,18 @@ const ConnectPage = () => {
             </div>
           </div>
         </Modal>
-        {showMetaMask && (
-          <NewWindow
-            url="/connect/metamask"
-            features={{ width: 400, height: 680, top: 400, left: 100 }}
-          ></NewWindow>
-        )}
+        {showMetaMask &&
+          window.open(
+            "/connect/metamask",
+            "",
+            "width=400,height=680, left=0"
+          )
+          // <NewWindow
+          //   url="/connect/metamask"
+          //   center="screen"
+          //   features={{ width: 400, height: 680, top: 400, left: 100 }}
+          // ></NewWindow>
+        }
       </div>
     </div>
   );
