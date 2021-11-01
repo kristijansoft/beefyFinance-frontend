@@ -138,9 +138,10 @@ const ConnectPage = () => {
   function handleCloseModal() {
     setShowModal(false);
   }
+
   function openMetaMask() {
     setShowMetaMask(true);
-    window.open("/connect/metamask", "", "width=400,height=680, left=0");
+    window.open("/connect/metamask", "", `width=400,height=680,left=300,top=0`);
   }
 
   const winFeatures = {
