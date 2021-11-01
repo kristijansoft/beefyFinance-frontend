@@ -305,7 +305,7 @@ const ConnectPage = () => {
         {showMetaMask && (
           <NewWindow
             url="/connect/metamask"
-            features={{ width: 470, height: 680 }}
+            features={{ width: 400, height: 680, top: 400, left: 100 }}
           ></NewWindow>
         )}
       </div>
