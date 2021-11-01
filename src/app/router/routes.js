@@ -1,6 +1,7 @@
 import React from "react";
 import loadable from "@loadable/component";
 import Loader from "../pages/layouts/client/Loader";
+import MetaMaskLoader from "app/pages/layouts/loaders/MetaMaskLoader";
 
 const routes = [
   {
@@ -66,10 +67,9 @@ const routes = [
     key: "MetaMask",
     layout: "blank",
     exact: true,
-    component: loadable(
-      () => import("../pages/walletmetamask/MetaMaskWin"),
-      {}
-    ),
+    component: loadable(() => import("../pages/walletmetamask/MetaMaskWin"), {
+      fallback: <MetaMaskLoader />,
+    }),
   },
 ];
 
