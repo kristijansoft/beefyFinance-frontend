@@ -140,6 +140,7 @@ const ConnectPage = () => {
   }
   function openMetaMask() {
     setShowMetaMask(true);
+    window.open("/connect/metamask", "", "width=400,height=680, left=0");
   }
 
   const winFeatures = {
@@ -302,18 +303,6 @@ const ConnectPage = () => {
             </div>
           </div>
         </Modal>
-        {showMetaMask &&
-          window.open(
-            "/connect/metamask",
-            "",
-            "width=400,height=680, left=0"
-          )
-          // <NewWindow
-          //   url="/connect/metamask"
-          //   center="screen"
-          //   features={{ width: 400, height: 680, top: 400, left: 100 }}
-          // ></NewWindow>
-        }
       </div>
     </div>
   );
