@@ -80,6 +80,31 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  .connect-wallet-wrapper {
+    color: #000;
+    padding: 25px;
+    text-align: center;
+    margin-bottom: 25px;
+    background-color: #f8f2ec;
+    & > p {
+      margin-bottom: 15px;
+    }
+  }
+  .connect-smart {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    P {
+      color: #000;
+      padding: 12px;
+      background: #f8f2ec;
+      font-weight: 900;
+      border-radius: 0;
+      margin-bottom: 2rem;
+    }
+  }
   .network-select {
     display: flex;
     justify-content: space-between;
@@ -120,10 +145,6 @@
       position: absolute;
       top: 10px;
       right: 10px;
-      .btn-clear {
-        border: 1px solid #ded9d5;
-        padding: 4px 8px;
-      }
     }
     &__box {
       display: flex;
@@ -142,7 +163,7 @@
             color: #699e77 !important;
           }
         }
-        input[type="checkbox"] {
+        input[type='checkbox'] {
           margin-right: 10px;
           font-size: 1rem;
           line-height: 1.5;
@@ -200,9 +221,29 @@
       & div {
         padding: 0 10px;
       }
-      img {
-        width: 50px;
-        height: auto;
+      &__icon {
+        img {
+          width: 50px;
+          height: auto;
+        }
+      }
+      &__detail {
+        .boost-action {
+          width: 108px;
+          border: solid 2px #5a8f69;
+          height: 32px;
+          display: block;
+          padding: 4px 26px 4px 6px;
+          position: relative;
+          white-space: nowrap;
+          border-radius: 4px;
+          img {
+            vertical-align: middle;
+            &.boost-fire-icon {
+              height: 25px;
+            }
+          }
+        }
       }
     }
     .wallet-stats {
@@ -214,9 +255,24 @@
         list-style: none;
         flex-wrap: wrap;
         li {
+          position: relative;
           font-size: 16px;
           color: #000;
           padding: 0.5rem 0.7rem;
+          .sale-price {
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            color: #2a9e46;
+            pointer-events: none;
+          }
+          .original-price {
+            text-decoration: line-through;
+          }
+          .info-icon-wrapped {
+            display: flex;
+            align-items: center;
+          }
         }
       }
     }

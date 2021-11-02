@@ -1,40 +1,41 @@
-import React, { useState } from "react";
-import * as Modal from "react-modal";
-import NewWindow from "react-new-window";
+import React, { useState } from 'react';
+import * as Modal from 'react-modal';
+import NewWindow from 'react-new-window';
 
-import "./Connect.scss";
+import './Connect.scss';
 
-import WalletInjectedImg from "./../../../assets/images/wallets/injected.svg";
-import WalletConnectImg from "./../../../assets/images/wallets/connect.svg";
-import WalletBinanceImg from "./../../../assets/images/wallets/binance.png";
-import WalletMathImg from "./../../../assets/images/wallets/math.svg";
-import WalletTrustImg from "./../../../assets/images/wallets/trust.svg";
-import WalletSafepalImg from "./../../../assets/images/wallets/safepal.svg";
-import WalletBinanceFillImg from "./../../../assets/images/BSC-fill.svg";
+import WalletInjectedImg from './../../../assets/images/wallets/injected.svg';
+import WalletConnectImg from './../../../assets/images/wallets/connect.svg';
+import WalletBinanceImg from './../../../assets/images/wallets/binance.png';
+import WalletMathImg from './../../../assets/images/wallets/math.svg';
+import WalletTrustImg from './../../../assets/images/wallets/trust.svg';
+import WalletSafepalImg from './../../../assets/images/wallets/safepal.svg';
+import WalletBinanceFillImg from './../../../assets/images/BSC-fill.svg';
 
-import WalletBifiImg from "assets/images/coins/bifi.png";
-import WalletBTCImg from "assets/images/coins/BTC.svg";
-import WalletBananaImg from "assets/images/coins/banana.svg";
-import { Link } from "react-router-dom";
-import Dropdown from "../../components/Dropdown/Dropdown";
-import { FaFire } from "react-icons/fa";
-import FireImg from "assets/images/fire.png";
-import SpanLoader from "app/components/SpanLoader/SpanLoader";
+import WalletBifiImg from 'assets/images/coins/bifi.png';
+import WalletBTCImg from 'assets/images/coins/BTC.svg';
+import WalletBananaImg from 'assets/images/coins/banana.svg';
+import { Link } from 'react-router-dom';
+import Dropdown from '../../components/Dropdown/Dropdown';
+import { FaFire, FaInfoCircle } from 'react-icons/fa';
+import FireImg from 'assets/images/fire.png';
+import boostImg from 'assets/images/boost.svg';
+import SpanLoader from 'app/components/SpanLoader/SpanLoader';
 
-Modal.setAppElement("#root");
+Modal.setAppElement('#root');
 
 const VaultItem = ({ data, index = 0 }) => {
   return (
     <div className="vault-widget">
-      {data.caption !== "" && <div className="caption">{data.caption}</div>}
+      {data.caption !== '' && <div className="caption">{data.caption}</div>}
       <div className="widget-container">
         <div className="main-info">
-          <div>
+          <div className="main-info__icon">
             {index == 0 && <img src={WalletBifiImg} alt="Vault Icon" />}
             {index == 1 && <img src={WalletBTCImg} alt="Vault Icon" />}
             {index == 2 && <img src={WalletBananaImg} alt="Vault Icon" />}
           </div>
-          <div>
+          <div className="main-info__detail">
             <p>
               <strong>{data.title}</strong>
             </p>
@@ -46,6 +47,12 @@ const VaultItem = ({ data, index = 0 }) => {
                 <strong>Buy Token</strong>
               </Link>
             </p>
+            <div className="boost-action">
+              <img src={boostImg} alt="Boost" />
+              <span>
+                <img src={FireImg} className="boost-fire-icon" alt="fire" />
+              </span>
+            </div>
           </div>
         </div>
         <div className="wallet-stats">
@@ -63,20 +70,32 @@ const VaultItem = ({ data, index = 0 }) => {
               <span className="text-gray">Deposited</span>
             </li>
             <li>
-              <p>
+              <div className="sale-price">
+                <strong>{data.apySale}</strong>
+              </div>
+              <p className="original-price">
                 <strong>{data.apy}%</strong>
               </p>
-              <span className="text-gray">APY</span>
+              <div className="text-gray info-icon-wrapped">
+                <span>APY</span>
+                <FaInfoCircle />
+              </div>
             </li>
             <li>
-              <p>
+              <div className="sale-price">
+                <strong>{data.dailySale}</strong>
+              </div>
+              <p className="original-price">
                 <strong>{data.daily}%</strong>
               </p>
-              <span className="text-gray">Daily</span>
+              <div className="text-gray info-icon-wrapped">
+                <span>Daily</span>
+                <FaInfoCircle />
+              </div>
             </li>
             <li>
               <p>
-                <strong>${data.tvl}</strong>
+                <strong>${data.tvl}M</strong>
               </p>
               <span className="text-gray">TVL</span>
             </li>
@@ -89,12 +108,12 @@ const VaultItem = ({ data, index = 0 }) => {
 
 const listOfPlatform = [
   {
-    id: "all",
-    label: "All",
+    id: 'all',
+    label: 'All',
   },
   {
-    id: "eth",
-    label: "Etherium",
+    id: 'eth',
+    label: 'Etherium',
   },
 ];
 const ConnectPage = () => {
@@ -102,29 +121,33 @@ const ConnectPage = () => {
   const [showMetaMask, setShowMetaMask] = useState(false);
   const vaults = [
     {
-      title: "BIFI Maxi",
-      uses: "Beefy.Finance",
-      caption: "",
+      title: 'BIFI Maxi',
+      uses: 'Beefy.Finance',
+      caption: '',
       wallet: null,
       deposited: null,
-      apy: 6.4,
-      daily: 0.017,
-      tvl: 21.15,
+      apy: 7.53,
+      apySale: '18.27%',
+      daily: 0.02,
+      dailySale: '0.05%',
+      tvl: 37.62,
     },
     {
-      title: "beltBTC",
-      uses: "Belt",
-      caption: "Boosted by PlayMining",
+      title: 'beltBTC',
+      uses: 'Belt',
+      caption: 'Boosted by PlayMining',
       wallet: 240,
       deposited: 350,
       apy: 3.84,
-      daily: 0.0103,
+      apySale: '17.73%',
+      daily: 0.0094,
+      dailySale: '0.0485%',
       tvl: 22.63,
     },
     {
-      title: "BANANA-BNB LP",
-      uses: "ApeSwap",
-      caption: "Boosted by CEEK",
+      title: 'BANANA-BNB LP',
+      uses: 'ApeSwap',
+      caption: 'Boosted by CEEK',
       wallet: 240,
       deposited: 350,
       apy: 151.7,
@@ -132,9 +155,9 @@ const ConnectPage = () => {
       tvl: 3.62,
     },
     {
-      title: "beltBTC",
-      uses: "Belt",
-      caption: "",
+      title: 'beltBTC',
+      uses: 'Belt',
+      caption: '',
       wallet: 240,
       deposited: 350,
       apy: 3.84,
@@ -153,17 +176,29 @@ const ConnectPage = () => {
 
   function openMetaMask() {
     setShowMetaMask(true);
-    window.open("/connect/metamask", "", `width=400,height=680,left=300,top=0`);
+    window.open('/connect/metamask', '', `width=400,height=680,left=300,top=0`);
   }
 
   const winFeatures = {
-    width: "400",
+    width: '400',
   };
 
   return (
     <div className="page">
       <div className="page-container">
         <div className="content-wrapper-flex">
+          <div className="connect-wallet-wrapper">
+            <p>Wallet connection to BSC required.</p>
+            <button className="bee-btn transparent btn-clear">
+              Connect wallet
+            </button>
+          </div>
+          {/* <div className="connect-smart">
+            <p>
+              Using Smart Contracts, Tokens, and Crypto is always a risk. DYOR
+              before investing.
+            </p>
+          </div> */}
           <div className="network-select">
             <div className="network-select__left">
               <h2>Select Network</h2>
@@ -181,8 +216,8 @@ const ConnectPage = () => {
               </p>
             </div>
             <div className="network-select__right">
-              <h2>TVL $405.59M</h2>
-              <h3>BIFI Buyback $0.00/day</h3>
+              <h2>TVL $530.70M</h2>
+              <h3>BIFI Buyback $7.32k/day</h3>
               <h3>
                 <span>
                   Deposited <SpanLoader />
@@ -216,7 +251,7 @@ const ConnectPage = () => {
               </div>
               <div>
                 <input type="checkbox" value="0" />
-                <span>Boost</span>{" "}
+                <span>Boost</span>{' '}
                 <img src={FireImg} className="fire-icon" alt="fire" />
               </div>
             </div>
@@ -253,30 +288,30 @@ const ConnectPage = () => {
           shouldCloseOnOverlayClick={false}
           style={{
             overlay: {
-              backgroundColor: "rgba(0, 0, 0, 0.4)",
-              width: "100%",
-              inset: "none",
+              backgroundColor: 'rgba(0, 0, 0, 0.4)',
+              width: '100%',
+              inset: 'none',
             },
             content: {
-              position: "absolute",
-              top: "50%",
-              right: "auto",
-              bottom: "auto",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              width: "100%",
-              border: "none",
-              background: "#fff",
-              WebkitOverflowScrolling: "touch",
-              borderRadius: "4px",
-              outline: "none",
-              padding: "0",
-              margin: "0",
-              maxWidth: "800px",
-              minWidth: "fit-content",
-              overflow: "hidden",
-              maxHeight: "100%",
-              borderRadius: "12px",
+              position: 'absolute',
+              top: '50%',
+              right: 'auto',
+              bottom: 'auto',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              width: '100%',
+              border: 'none',
+              background: '#fff',
+              WebkitOverflowScrolling: 'touch',
+              borderRadius: '4px',
+              outline: 'none',
+              padding: '0',
+              margin: '0',
+              maxWidth: '800px',
+              minWidth: 'fit-content',
+              overflow: 'hidden',
+              maxHeight: '100%',
+              borderRadius: '12px',
             },
           }}
         >
