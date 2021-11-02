@@ -231,13 +231,13 @@ const ConnectPage = () => {
               </p>
             </div>
             <div className="network-select__right">
-              <h2>TVL $530.70M</h2>
-              <h3>BIFI Buyback $7.32k/day</h3>
-              <h3>
+              <h1>TVL $530.70M</h1>
+              <h2>BIFI Buyback $7.32k/day</h2>
+              <h2>
                 <span>
                   Deposited <SpanLoader />
                 </span>
-              </h3>
+              </h2>
               <p>
                 <span className="text-gray">
                   All vaults autocompound at an optional rate
