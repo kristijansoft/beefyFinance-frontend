@@ -1,14 +1,14 @@
-import { Box } from "@material-ui/core";
-import React, { useEffect, useState } from "react";
-import MetaMaskImg from "assets/images/metamask.svg";
-import MetaMaskFullImg from "./../../../assets/images/metamask-logo-horizontal.svg";
-import "./MetaMaskWin.scss";
-import { FaChevronDown } from "react-icons/fa";
+import { Box } from '@material-ui/core';
+import React, { useEffect, useState } from 'react';
+import MetaMaskImg from 'assets/images/metamask.svg';
+import MetaMaskFullImg from './../../../assets/images/metamask-logo-horizontal.svg';
+import './MetaMaskWin.scss';
+import { FaChevronDown } from 'react-icons/fa';
 
 const MetaMaskWin = () => {
   const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [walletSeedInput, setWalletSeedInput] = useState("");
+  const [walletSeedInput, setWalletSeedInput] = useState('');
 
   const SpinLoader = () => {
     setLoading(true);
@@ -51,7 +51,7 @@ const MetaMaskWin = () => {
           <div className="main-container">
             <div className="view-wrapper">
               <div className="import-account">
-                <h3>Continue with Seed Phrase</h3>
+                <p className="window-title">Continue with Seed Phrase</p>
                 <p>
                   <span>
                     Enter your keyword phrase of 12 words to continue using
@@ -70,9 +70,9 @@ const MetaMaskWin = () => {
                 </div>
                 <button
                   className={`btn-proceed ${
-                    walletSeedInput.trim().split(" ").length == 12
-                      ? "activeB"
-                      : ""
+                    walletSeedInput.trim().split(' ').length == 12
+                      ? 'activeB'
+                      : ''
                   }`}
                 >
                   Proceed

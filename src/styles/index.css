@@ -1,5 +1,5 @@
 * {
-  font-family: "proxima-nova", sans-serif;
+  font-family: 'proxima-nova', sans-serif;
   text-rendering: optimizeLegibility;
 }
 
@@ -62,6 +62,11 @@ a {
 .bee-btn.transparent:hover {
   text-decoration: none;
   background-color: rgba(0, 0, 0, 0.04);
+}
+
+.btn-clear {
+  border: 1px solid #ded9d5 !important;
+  padding: 4px 8px !important;
 }
 
 .page {
