@@ -69,22 +69,22 @@
 /* React Modal */
 .ReactModal__Content--after-open {
   @media screen and (max-width: 768px) {
-    width: 80% !important;
+    width: 65% !important;
     margin-left: auto !important;
     margin-right: auto !important;
     height: 90% !important;
     overflow: scroll !important;
   }
-  @media screen and (min-width: 1600px) {
-    max-width: 80% !important;
+  @media screen and (min-width: 1681px) {
+    max-width: 65% !important;
     .wallets-wrapper {
-      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)) !important;
+      grid-template-columns: repeat(auto-fit, minmax(530px, 1fr)) !important;
     }
   }
-  @media screen and (min-width: 1400px) {
-    max-width: 80% !important;
+  @media screen and (min-width: 1441px) and (max-width: 1680px) {
+    max-width: 65% !important;
     .wallets-wrapper {
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)) !important;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)) !important;
     }
   }
 }
