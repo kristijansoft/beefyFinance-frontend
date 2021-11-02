@@ -16,7 +16,7 @@
     pointer-events: auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    // max-width: 800px;
+    max-width: 800px;
     min-width: fit-content;
     max-height: 100%;
     overflow: auto;
@@ -69,23 +69,11 @@
 /* React Modal */
 .ReactModal__Content--after-open {
   @media screen and (max-width: 768px) {
-    width: 65% !important;
+    width: 80% !important;
     margin-left: auto !important;
     margin-right: auto !important;
     height: 90% !important;
     overflow: scroll !important;
-  }
-  @media screen and (min-width: 1681px) {
-    max-width: 65% !important;
-    .wallets-wrapper {
-      grid-template-columns: repeat(auto-fit, minmax(530px, 1fr)) !important;
-    }
-  }
-  @media screen and (min-width: 1441px) and (max-width: 1680px) {
-    max-width: 65% !important;
-    .wallets-wrapper {
-      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)) !important;
-    }
   }
 }
 
