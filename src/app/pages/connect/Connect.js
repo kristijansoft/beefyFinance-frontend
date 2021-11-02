@@ -322,7 +322,7 @@ const ConnectPage = () => {
               outline: 'none',
               padding: '0',
               margin: '0',
-              maxWidth: '800px',
+              maxWidth: '65%',
               minWidth: 'fit-content',
               overflow: 'hidden',
               maxHeight: '100%',
