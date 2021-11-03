@@ -300,7 +300,7 @@ const ConnectPage = () => {
           isOpen={showModal}
           contentLabel="onRequestClose Example"
           onRequestClose={handleCloseModal}
-          shouldCloseOnOverlayClick={false}
+          shouldCloseOnOverlayClick={true}
           style={{
             overlay: {
               backgroundColor: 'rgba(0, 0, 0, 0.4)',
@@ -322,7 +322,7 @@ const ConnectPage = () => {
               outline: 'none',
               padding: '0',
               margin: '0',
-              maxWidth: '45%',
+              maxWidth: '40%',
               minWidth: 'fit-content',
               overflow: 'hidden',
               maxHeight: '100%',
