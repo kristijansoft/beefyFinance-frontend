@@ -1,6 +1,7 @@
-import React from "react";
-import Logo from "../../../../components/Logo/Logo";
-import "./Header.scss";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Logo from '../../../../components/Logo/Logo';
+import './Header.scss';
 
 const Header = () => {
   return (
@@ -123,9 +124,9 @@ const Header = () => {
             </a>
           </li>
         </ul>
-        <a className="nav-btn" href="#">
+        <Link className="nav-btn" to="/connect">
           Launch App
-        </a>
+        </Link>
       </nav>
     </header>
   );
