@@ -14,7 +14,7 @@ const Header = () => {
           <li>
             <a
               className="nav__menu-item"
-              href="https://www.reddit.com/r/Beefy/"
+              href="https://www.reddit.com/r/BeefyFinanceBIFI/"
               target="_blank"
               rel="noreferrer"
             >
@@ -28,7 +28,7 @@ const Header = () => {
           <li>
             <a
               className="nav__menu-item"
-              href="https://twitter.com/beefyfinance"
+              href="https://twitter.com/beefyfinance?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
               target="_blank"
               rel="noreferrer"
             >
