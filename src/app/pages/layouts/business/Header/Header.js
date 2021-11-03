@@ -1,20 +1,20 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Logo from "../../../../components/Logo/Logo";
-import "./Header.scss";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Logo from '../../../../components/Logo/Logo';
+import './Header.scss';
 
-import { FaQuestionCircle, FaVoteYea } from "react-icons/fa";
-import { FaChartBar } from "react-icons/fa";
-import { FaBook } from "react-icons/fa";
-import { FaComments } from "react-icons/fa";
-import { FaDollarSign } from "react-icons/fa";
-import { MdDarkMode } from "react-icons/md";
+import { FaQuestionCircle, FaVoteYea } from 'react-icons/fa';
+import { FaChartBar } from 'react-icons/fa';
+import { FaBook } from 'react-icons/fa';
+import { FaComments } from 'react-icons/fa';
+import { FaDollarSign } from 'react-icons/fa';
+import { MdDarkMode } from 'react-icons/md';
 
 const Header = () => {
   return (
     <header className="bsn-header">
       <div className="bsn-header-wrapper">
-        <div className="logo">
+        <div className="logo bsn-logo">
           <Logo />
         </div>
         <div className="nav">
