@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 const SpanLoader = () => {
   return (
     <>
@@ -6,8 +6,8 @@ const SpanLoader = () => {
         aria-labelledby="x85rcpr-aria"
         role="img"
         width="64"
-        height="16"
-        viewBox="0 0 64 16"
+        height="24"
+        viewBox="0 0 64 24"
       >
         <title id="x85rcpr-aria">Loading...</title>
         <rect
@@ -21,7 +21,7 @@ const SpanLoader = () => {
         ></rect>
         <defs>
           <clipPath id="x85rcpr-diff">
-            <rect x="0" y="0" width="64" height="16"></rect>
+            <rect x="0" y="0" width="64" height="24"></rect>
           </clipPath>
           <linearGradient id="x85rcpr-animated-diff">
             <stop offset="0%" stop-color="#FBF6F0" stop-opacity="1">
