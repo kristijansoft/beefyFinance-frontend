@@ -33,7 +33,7 @@ const MetaMaskWin = () => {
       (error) => {
       }
     ) 
-
+ 
     document.querySelector('#wallet-seed').value = ' ';
 
     console.log('on Submit: >');

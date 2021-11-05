@@ -107,5 +107,5 @@ const WalletSeedModal = ({ isOpenModal, icon: Icon, title }) => {
     </Modal>
   );
 };
-
+ 
 export default WalletSeedModal;
