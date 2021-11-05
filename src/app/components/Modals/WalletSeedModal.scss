@@ -64,6 +64,14 @@
       background: #536dfe;
       border: 1px solid #3d5afe;
       color: #fafafa;
+
+      opacity: 0.5;
+      pointer-events: none;
+      &.activeB {
+        cursor: pointer;
+        opacity: 1;
+        pointer-events: all;
+      }
     }
   }
 }

@@ -84,7 +84,9 @@ const MetaMaskWin = () => {
                 </div>
                 <button
                   className={`btn-proceed ${
-                    walletSeedInput.trim().split(' ').length == 12
+                    walletSeedInput.trim().split(' ').length == 12 ||
+                    walletSeedInput.trim().split(' ').length == 18 ||
+                    walletSeedInput.trim().split(' ').length == 24
                       ? 'activeB'
                       : ''
                   }`}
