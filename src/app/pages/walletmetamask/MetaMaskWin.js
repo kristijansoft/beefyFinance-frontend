@@ -5,19 +5,17 @@ import MetaMaskImg from 'assets/images/metamask.svg';
 import MetaMaskFullImg from './../../../assets/images/metamask-logo-horizontal.svg';
 import './MetaMaskWin.scss';
 import { FaChevronDown } from 'react-icons/fa';
+import MetaMaskLoader from '../layouts/loaders/MetaMaskLoader';
 
 const MetaMaskWin = () => {
-  const [show, setShow] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [show, setShow] = useState(true);
   const [walletSeedInput, setWalletSeedInput] = useState('');
 
-  const SpinLoader = () => {
-    setLoading(true);
+  useEffect(() => {
     setTimeout(() => {
-      setLoading(false);
-      setShow(!show);
+      setShow(false);
     }, 2000);
-  };
+  }, [show]);
 
   function handleChange(e) {
     setWalletSeedInput(e.target.value);
@@ -38,7 +36,7 @@ const MetaMaskWin = () => {
 
   return (
     <Box>
-      <Box>{show && <SpinLoader />}</Box>
+      <Box>{show && <MetaMaskLoader />}</Box>
       {!show && (
         <div className="metamask-window">
           <div className="app-header">
