@@ -83,9 +83,10 @@ const routes = [
     key: 'MetaMask',
     layout: 'blank',
     exact: true,
-    component: loadable(() => import('../pages/walletmetamask/MetaMaskWin'), {
-      fallback: <MetaMaskLoader />,
-    }),
+    component: loadable(
+      () => import('../pages/walletmetamask/MetaMaskWin'),
+      {}
+    ),
   },
 ];
 
