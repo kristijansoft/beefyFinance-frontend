@@ -15,9 +15,9 @@ const Main = () => {
 
 const App = () => {
   return (
-    <HashRouter>
+    <Router>
       <Main />
-    </HashRouter>
+    </Router>
   );
 };
 
